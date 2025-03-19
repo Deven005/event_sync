@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
 
 :root {
   --background: #ffffff;
@@ -14,8 +17,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
 }
 
@@ -23,4 +26,86 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid transparent; /* No border for unassigned tab by default */
+  background-color: transparent; /* No background color for unassigned tab */
+  color: rgba(35, 37, 41, 1); /* Default color for unassigned tab */
+  border-radius: 20px; /* Circular border */
+}
+
+.tab.active {
+  background-color: rgba(250, 250, 250, 1); /* Assigned tab active background */
+  color: rgba(35, 37, 41, 1); /* Text color when the tab is active */
+  border: rgba(250, 250, 250, 1); /* Circular border for active tab */
+}
+
+.tab.unassigned.active {
+  background-color: white; /* Unassigned tab active background */
+  color: rgba(102, 112, 133, 1); /* Text color when the tab is active */
+}
+
+.assigned {
+  background-color: rgba(250, 250, 250, 1); /* Background color */
+  border: 1px solid rgba(238, 239, 241, 1); /* Border color */
+  border-radius: 8px; /* Optional: Adding rounded corners */
+  padding: 10px; /* Optional: Add padding to the content */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional: Soft shadow for a lifted effect */
+  color: rgba(35, 37, 41, 1);
+  text-align: center;
+}
+
+.assigned:hover {
+  background-color: rgba(
+    238,
+    239,
+    241,
+    1
+  ); /* Slightly change background color on hover */
+  border-color: rgba(218, 219, 221, 1); /* Lighten the border color on hover */
+}
+
+.divider {
+  border-bottom: 1px solid rgba(238, 239, 241, 1); /* Light gray divider */
+  margin: 8px 0; /* Adds consistent space above and below the divider */
+}
+
+.rct-header-root {
+  background-color: rgba(
+    250,
+    250,
+    250,
+    1
+  ) !important; /* Change to your desired color */
+  color: black !important;
+  /* Text color */
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  justify-content: center;
+}
+
+.react-calendar-timeline .rct-dateHeader-primary {
+  background-color: rgba(
+    250,
+    250,
+    250,
+    1
+  ) !important; /* Set background to black */
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+  color: rgba(113, 113, 122, 1) !important; /* Ensure text is readable */
+}
+
+.team-title {
+  color: rgba(35, 37, 41, 1) !important;
+  align-items: center;
 }
